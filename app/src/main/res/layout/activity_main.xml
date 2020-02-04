@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/nbno"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="23"
+        android:textAlignment="center"
+        android:textColor="#CC99FF"
+        android:textSize="25dp"
+        app:layout_constraintEnd_toStartOf="@+id/plcno"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/nb"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="New Business"
+        android:paddingTop="10dp"
+        android:textSize="14dp"
+        android:textColor="#ffffff"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toStartOf="@+id/plc"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nbno" />
+
+    <TextView
+        android:id="@+id/plc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Policy Servicing"
+        android:textSize="14dp"
+        android:paddingTop="10dp"
+        android:textColor="#40ffffff"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/nb"
+        app:layout_constraintTop_toBottomOf="@+id/plcno" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/lineno"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="205dp"
+        android:layout_marginLeft="205dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="205dp"
+        android:layout_marginRight="205dp"
+        android:layout_marginBottom="5dp"
+        app:cardBackgroundColor="#CC99FF"
+        app:contentPadding="2dp"
+        app:layout_constraintBottom_toTopOf="@+id/searchView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/plcno"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="18"
+        android:textAlignment="center"
+        android:textColor="#40CC99FF"
+        android:textSize="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/nbno"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <SearchView
+        android:id="@+id/searchView"
+        android:layout_width="358dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:focusable="false"
+        android:iconifiedByDefault="false"
+        android:queryHint="Search by Name / ID Type / Policy No."
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nb" >
+
+    </SearchView>
+
+
+    <Button
+    android:id="@+id/addbtn"
+    android:layout_width="136dp"
+    android:layout_height="59dp"
+    android:layout_marginEnd="5dp"
+    android:layout_marginRight="5dp"
+    android:layout_marginBottom="5dp"
+    android:text="Add"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent" />
+
+    <fragment
+        android:id="@+id/casesview"
+        android:name="com.example.ui_design_honda.CasesView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/addbtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchView"
+        app:layout_constraintVertical_bias="1.0">
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="550dp" />
+    </fragment>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
